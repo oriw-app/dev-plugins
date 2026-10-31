@@ -1,0 +1,17 @@
+{
+  "name": "dev-plugins",
+  "owner": { "name": "oriw-app", "url": "https://github.com/oriw-app" },
+  "metadata": {
+    "description": "Claude Code plugins for disciplined, issue-driven development by the Oriw team."
+  },
+  "plugins": [
+    {
+      "name": "issuewright",
+      "source": "./plugins/issuewright",
+      "description": "Issue-driven AI-native SDLC: GitHub issues as the spec, owner gates for intent, spec and plan, and DDD + BDD + TDD with hexagonal architecture and CQS enforced by skills, hooks and a verifier.",
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "keywords": ["sdlc", "workflow", "github-issues", "ddd", "bdd", "tdd", "hexagonal", "cqs"]
+    }
+  ]
+}
