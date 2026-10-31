@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Shared helpers for ai-sdlc hooks. Hooks only act in repositories that opt in with .claude/sdlc.json.
+# Shared helpers for issuewright hooks. Hooks only act in repositories that opt in with .claude/issuewright.json.
 set -uo pipefail
 
 INPUT="$(cat)"
@@ -7,7 +7,7 @@ INPUT="$(cat)"
 need() { command -v "$1" >/dev/null 2>&1; }
 
 if ! need jq; then
-  echo "ai-sdlc: jq is not installed, so workflow hooks are off. Install jq to enable them." >&2
+  echo "issuewright: jq is not installed, so workflow hooks are off. Install jq to enable them." >&2
   exit 0
 fi
 
@@ -16,7 +16,7 @@ json() { printf '%s' "$INPUT" | jq -r "$1 // empty"; }
 ROOT="$(cd "$(json .cwd)" 2>/dev/null && git rev-parse --show-toplevel 2>/dev/null)" || ROOT=""
 [ -z "$ROOT" ] && ROOT="${CLAUDE_PROJECT_DIR:-}"
 [ -z "$ROOT" ] && exit 0
-CONFIG="$ROOT/.claude/sdlc.json"
+CONFIG="$ROOT/.claude/issuewright.json"
 [ -f "$CONFIG" ] || exit 0   # project hasn't opted in
 cd "$ROOT" || exit 0
 
@@ -28,7 +28,7 @@ BRANCH="$(git branch --show-current 2>/dev/null)"
 ISSUE=""
 if [[ "$BRANCH" =~ ^(feat|fix|chore|docs|spike)/([0-9]+)(-|$) ]]; then ISSUE="${BASH_REMATCH[2]}"; fi
 GITDIR="$(git rev-parse --absolute-git-dir 2>/dev/null)"
-CACHE="$GITDIR/ai-sdlc"; mkdir -p "$CACHE" 2>/dev/null
+CACHE="$GITDIR/issuewright"; mkdir -p "$CACHE" 2>/dev/null
 
 # Labels of the branch's issue, cached for 60 seconds; falls back to the last known labels when offline.
 issue_labels() {

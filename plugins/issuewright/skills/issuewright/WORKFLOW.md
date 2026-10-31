@@ -2,7 +2,7 @@
 
 How people and Claude build software together, from an idea to a release. GitHub issues are the spec; the code follows domain-driven design (DDD), behaviour-driven development (BDD) and test-driven development (TDD), shaped by a hexagonal architecture with command–query separation (CQS).
 
-This file is the complete reference. It is shipped inside the `ai-sdlc` Claude Code plugin, so every Claude session in every project that uses the plugin follows exactly this text.
+This file is the complete reference. It is shipped inside the `issuewright` Claude Code plugin, so every Claude session in every project that uses the plugin follows exactly this text.
 
 ## Contents
 
@@ -381,7 +381,7 @@ Two or three Claude sessions can run in parallel, each in its own git worktree o
 
 ## 13. The tooling
 
-All of this ships in the `ai-sdlc` plugin, so every project and every session gets the same behaviour.
+All of this ships in the `issuewright` plugin, so every project and every session gets the same behaviour.
 
 ### Skills (typed as commands)
 
@@ -397,7 +397,7 @@ All of this ships in the `ai-sdlc` plugin, so every project and every session ge
 | `/milestone-plan`, `/sprint-plan`, `/sprint-review` | Planning | As in section 10 |
 | `/release` | Release | Prepares the release for the owner to authorise |
 
-Practice skills, loaded when relevant: `ai-sdlc` (this guide), `ddd-hexagonal`, `bdd-scenarios`, `tdd`.
+Practice skills, loaded when relevant: `issuewright` (this guide), `ddd-hexagonal`, `bdd-scenarios`, `tdd`.
 
 ### Hooks (enforcement)
 
@@ -429,13 +429,13 @@ Practice skills, loaded when relevant: `ai-sdlc` (this guide), `ddd-hexagonal`, 
    ```json
    {
      "extraKnownMarketplaces": {
-       "ai-sdlc": { "source": { "source": "github", "repo": "<owner>/ai-sdlc" } }
+       "dev-plugins": { "source": { "source": "github", "repo": "oriw-app/dev-plugins" } }
      },
-     "enabledPlugins": { "ai-sdlc@ai-sdlc": true }
+     "enabledPlugins": { "issuewright@dev-plugins": true }
    }
    ```
 
-2. **Describe the project** in `.claude/sdlc.json` (all fields optional):
+2. **Describe the project** in `.claude/issuewright.json` (all fields optional):
 
    ```json
    {
@@ -457,4 +457,4 @@ Practice skills, loaded when relevant: `ai-sdlc` (this guide), `ddd-hexagonal`, 
 
 ## 15. Changing this workflow
 
-Change it by pull request to the `ai-sdlc` repository. Retro findings are the usual source. A change to a hook or skill comes with a test of the new behaviour, and projects pick it up with `claude plugin update ai-sdlc`.
+Change it by pull request to the `dev-plugins` repository. Retro findings are the usual source. A change to a hook or skill comes with a test of the new behaviour, and projects pick it up with `claude plugin update issuewright@dev-plugins`.

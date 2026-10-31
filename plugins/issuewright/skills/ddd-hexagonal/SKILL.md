@@ -6,7 +6,7 @@ description: Domain-driven design with hexagonal architecture and command-query 
 # DDD, hexagonal architecture and CQS
 
 ## Language
-- Use the project glossary's words (`domainDoc` in `.claude/sdlc.json`) in issues, scenarios, code and UI text. A new concept gets a glossary entry, in the same pull request, before code uses it.
+- Use the project glossary's words (`domainDoc` in `.claude/issuewright.json`) in issues, scenarios, code and UI text. A new concept gets a glossary entry, in the same pull request, before code uses it.
 - Each feature belongs to one bounded context; work that crosses contexts names the contexts and the interface between them.
 
 ## Layers, per bounded context

@@ -17,7 +17,7 @@ if need timeout; then out="$(timeout "$LIMIT" bash -c "$QUICK" 2>&1)"; rc=$?; el
 if [ $rc -eq 0 ]; then echo "$fp" > "$CACHE/last-pass"; exit 0; fi
 
 {
-  echo "ai-sdlc: quick checks failed ('$QUICK', exit $rc). Fix them before finishing, or explain to the owner why you can't."
+  echo "issuewright: quick checks failed ('$QUICK', exit $rc). Fix them before finishing, or explain to the owner why you can't."
   echo "$out" | tail -40
 } >&2
 exit 2

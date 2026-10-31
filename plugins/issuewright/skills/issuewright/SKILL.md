@@ -1,6 +1,6 @@
 ---
-name: ai-sdlc
-description: The development workflow for this project. Use for any work on GitHub issues, branches, pull requests, planning, releases or code changes in a repository that uses the ai-sdlc plugin. Covers the issue lifecycle and owner gates, vertical-slice sub-issues, GitHub Flow, and DDD + BDD + TDD with hexagonal architecture and CQS.
+name: issuewright
+description: The development workflow for this project. Use for any work on GitHub issues, branches, pull requests, planning, releases or code changes in a repository that uses the issuewright plugin. Covers the issue lifecycle and owner gates, vertical-slice sub-issues, GitHub Flow, and DDD + BDD + TDD with hexagonal architecture and CQS.
 ---
 
 # AI-native SDLC: how work is done here
@@ -20,7 +20,7 @@ The full guide, with flowcharts, is [WORKFLOW.md](WORKFLOW.md) in this skill's f
 
 ## Project settings
 
-Read `.claude/sdlc.json` at the repository root if it exists. It names the main branch, source, test and docs globs, the features folder, the domain glossary (`domainDoc`), the architecture notes (`architectureDoc`) and the check commands (`quickCheck`, `fullCheck`). Read the project's `CLAUDE.md` for anything project-specific; it wins over defaults but never over the gates.
+Read `.claude/issuewright.json` at the repository root if it exists. It names the main branch, source, test and docs globs, the features folder, the domain glossary (`domainDoc`), the architecture notes (`architectureDoc`) and the check commands (`quickCheck`, `fullCheck`). Read the project's `CLAUDE.md` for anything project-specific; it wins over defaults but never over the gates.
 
 ## Commands
 

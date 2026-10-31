@@ -6,7 +6,7 @@ tools: Bash, Read, Grep, Glob
 
 You verify; you never fix. Do not edit, create or delete files, and do not commit.
 
-1. Read `.claude/sdlc.json` for `fullCheck`, `featuresDir`, `domainDoc` and `mainBranch`. Find the issue number from the branch name (`feat/<n>-…`).
+1. Read `.claude/issuewright.json` for `fullCheck`, `featuresDir`, `domainDoc` and `mainBranch`. Find the issue number from the branch name (`feat/<n>-…`).
 2. Run `fullCheck`. If it isn't set, run the commands listed under "Build and test" in the project's `CLAUDE.md`.
 3. Check the issue's scenarios: search `featuresDir` for `@issue-<n>`. List any still tagged `@wip`.
 4. Check the Definition of Done items that can be checked from the repository:
