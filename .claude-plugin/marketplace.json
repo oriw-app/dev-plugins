@@ -1,0 +1,17 @@
+{
+  "name": "ai-sdlc",
+  "owner": { "name": "oriw-app", "url": "https://github.com/oriw-app" },
+  "metadata": {
+    "description": "Issue-driven AI-native SDLC for Claude Code: GitHub issues as the spec, owner gates, DDD + BDD + TDD with hexagonal architecture and CQS."
+  },
+  "plugins": [
+    {
+      "name": "ai-sdlc",
+      "source": "./plugins/ai-sdlc",
+      "description": "Skills, hooks and a verifier that run the issue-driven AI-native SDLC: intent, spec and plan gates on GitHub issues; DDD, BDD, TDD, hexagonal architecture and CQS enforced on every change.",
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "keywords": ["sdlc", "workflow", "ddd", "bdd", "tdd", "hexagonal", "cqs", "github-issues"]
+    }
+  ]
+}
